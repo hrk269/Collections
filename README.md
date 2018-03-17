@@ -14,7 +14,7 @@ There is one task to complete.
 
     - Your `TextingDictionary` should have the following two public methods: `void insert(String word)` (to populate into the dictionary of possible results), `List<String> search(List<ValidTextKeyPress> prefixes)` (given an ordered list of valid key-press values returns a list of words or empty if none found)
 
-    - Your implementation should be case insensitive (i.e. `Brian` is treated the same as `brian`).  Your implementation must handle non a-Z or A-Z characters by throwing an `IllegalArgumentException`. Your implementation need to care about frequency or return order of the words.
+    - Your implementation should be case insensitive (i.e. `Brian` is treated the same as `brian`).  Your implementation must handle non a-Z or A-Z characters by throwing an `IllegalArgumentException`. Your implementation need not care about frequency or return order of the words.
 
     - The following are some example inputs and outputs (in short-hand, i.e. non-Java, for brevity):
 ```
