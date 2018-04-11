@@ -4,9 +4,7 @@ import java.util.HashMap;
 
 public class Test {
     public static void main(String[] args) {
-        ArrayList<String> aL = new ArrayList<>();
-        HashMap<Integer, ArrayList<String>> hM = new HashMap<>();
-        TextingDictionary dictionary = new TextingDictionary(hM);
+        TextingDictionary dictionary = new TextingDictionary();
         dictionary.insert("Brian");
         dictionary.insert("brain");
         dictionary.insert("braid");

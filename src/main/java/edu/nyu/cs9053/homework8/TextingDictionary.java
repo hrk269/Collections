@@ -4,11 +4,7 @@ import java.util.HashMap;
 
 public class TextingDictionary{
 
-    private HashMap<Integer, ArrayList<String>> knownWords = new HashMap<>();
-
-    public TextingDictionary(HashMap<Integer, ArrayList<String>> knownWords) {
-        this.knownWords = knownWords;
-    }
+    private final HashMap<Integer, ArrayList<String>> knownWords = new HashMap<>();
 
     public void insert(String word){
         if (word.equals(null)){
@@ -19,8 +15,8 @@ public class TextingDictionary{
         for (int i = 0; i < lowerCaseWord.length(); i++) {
             char c = lowerCaseWord.charAt(i);
             hashKey.append(ValidTextKeyPress.getInteger(String.valueOf(c)));
-            this.knownWords.putIfAbsent(Integer.parseInt(hashKey.toString()), new ArrayList<String>());
-            this.knownWords.get(Integer.parseInt(hashKey.toString())).add(word);
+            knownWords.putIfAbsent(Integer.parseInt(hashKey.toString()), new ArrayList<String>());
+            knownWords.get(Integer.parseInt(hashKey.toString())).add(word);
         }
     }
 
@@ -29,7 +25,7 @@ public class TextingDictionary{
         for(ValidTextKeyPress v: prefixes){
             hashKey.append(v.getTextKey());
         }
-        this.knownWords.putIfAbsent(Integer.parseInt(hashKey.toString()), new ArrayList<String>());
-        return this.knownWords.get(Integer.parseInt(hashKey.toString()));
+        knownWords.putIfAbsent(Integer.parseInt(hashKey.toString()), new ArrayList<String>());
+        return knownWords.get(Integer.parseInt(hashKey.toString()));
     }
 }
